@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="ERDiagram" name="ER">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ENTIDAD MARCA -->
+        <mxCell id="marca" value="MARCA&#xa;PK: CódigoMarca&#xa;NombreMarca" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIÓN DISEÑA -->
+        <mxCell id="diseña" value="DISEÑA" style="rhombus;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTIDAD ZAPATILLA -->
+        <mxCell id="zapatilla" value="ZAPATILLA&#xa;PK: Código&#xa;CódigoBarras&#xa;Nombre&#xa;Precio" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="420" y="40" width="180" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones MARCA - DISEÑA - ZAPATILLA -->
+        <mxCell id="edge1" edge="1" parent="1" source="marca" target="diseña">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="diseña" target="zapatilla">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTIDAD COLOR -->
+        <mxCell id="color" value="COLOR&#xa;PK: NombreColor" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="420" y="220" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIÓN TIENE -->
+        <mxCell id="tiene" value="TIENE" style="rhombus;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="460" y="160" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones ZAPATILLA - TIENE - COLOR -->
+        <mxCell id="edge3" edge="1" parent="1" source="zapatilla" target="tiene">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="tiene" target="color">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTIDAD FÁBRICA -->
+        <mxCell id="fabrica" value="FÁBRICA&#xa;PK: CódigoFábrica&#xa;Calle&#xa;Número&#xa;Ciudad" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="700" y="40" width="180" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIÓN SE FABRICA EN -->
+        <mxCell id="fabrica_rel" value="SE FABRICA EN" style="rhombus;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones ZAPATILLA - SE FABRICA EN - FÁBRICA -->
+        <mxCell id="edge5" edge="1" parent="1" source="zapatilla" target="fabrica_rel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="fabrica_rel" target="fabrica">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTIDAD TIENDA -->
+        <mxCell id="tienda" value="TIENDA&#xa;PK: CódigoTienda&#xa;NombreTienda&#xa;Teléfono" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="420" y="360" width="180" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIÓN SE VENDE EN -->
+        <mxCell id="vende" value="SE VENDE EN" style="rhombus;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="460" y="300" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones ZAPATILLA - SE VENDE EN - TIENDA -->
+        <mxCell id="edge7" edge="1" parent="1" source="zapatilla" target="vende">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="vende" target="tienda">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTIDAD CLIENTE -->
+        <mxCell id="cliente" value="CLIENTE&#xa;PK: DNI&#xa;Nombre&#xa;Apellidos" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="700" y="360" width="180" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIÓN COMPRA EN -->
+        <mxCell id="compra" value="COMPRA EN" style="rhombus;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="620" y="300" width="120" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones CLIENTE - COMPRA EN - TIENDA -->
+        <mxCell id="edge9" edge="1" parent="1" source="cliente" target="compra">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="compra" target="tienda">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
