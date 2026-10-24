@@ -5,95 +5,158 @@
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
-        <!-- ENTIDAD MARCA -->
-        <mxCell id="marca" value="MARCA&#xa;PK: CódigoMarca&#xa;NombreMarca" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="160" height="90" as="geometry"/>
-        </mxCell>
-
-        <!-- RELACIÓN DISEÑA -->
-        <mxCell id="diseña" value="DISEÑA" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="240" y="60" width="100" height="60" as="geometry"/>
-        </mxCell>
-
         <!-- ENTIDAD ZAPATILLA -->
-        <mxCell id="zapatilla" value="ZAPATILLA&#xa;PK: Código&#xa;CódigoBarras&#xa;Nombre&#xa;Precio" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="400" y="40" width="190" height="110" as="geometry"/>
+        <mxCell id="zapatilla" value="ZAPATILLA" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="160" height="60" as="geometry"/>
         </mxCell>
 
-        <!-- Conexiones MARCA - DISEÑA - ZAPATILLA -->
-        <mxCell id="edge1" edge="1" parent="1" source="marca" target="diseña">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- ATRIBUTOS ZAPATILLA -->
+        <mxCell id="zap_codigo" value="Código (PK)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="240" y="10" width="120" height="40" as="geometry"/>
         </mxCell>
-        <mxCell id="edge2" edge="1" parent="1" source="diseña" target="zapatilla">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="zap_cbarras" value="CódigoBarras" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="zap_nombre" value="Nombre" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="120" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="zap_precio" value="Precio" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="360" y="90" width="120" height="40" as="geometry"/>
         </mxCell>
 
         <!-- ATRIBUTO MULTIVALORADO COLORES -->
-        <mxCell id="colores" value="Colores" style="ellipse;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="400" y="170" width="100" height="50" as="geometry"/>
+        <mxCell id="zap_colores" value="Colores" style="ellipse;whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="360" y="10" width="120" height="40" as="geometry"/>
         </mxCell>
 
-        <!-- Conexión ZAPATILLA - COLORES -->
-        <mxCell id="edge_colores" edge="1" parent="1" source="zapatilla" target="colores">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- Conexiones atributos ZAPATILLA -->
+        <mxCell id="edge_z1" edge="1" parent="1" source="zap_codigo" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_z2" edge="1" parent="1" source="zap_cbarras" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_z3" edge="1" parent="1" source="zap_nombre" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_z4" edge="1" parent="1" source="zap_precio" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_z5" edge="1" parent="1" source="zap_colores" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- ENTIDAD MARCA -->
+        <mxCell id="marca" value="MARCA" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="60" as="geometry"/>
         </mxCell>
+
+        <!-- ATRIBUTOS MARCA -->
+        <mxCell id="marca_codigo" value="CódigoMarca (PK)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="marca_nombre" value="NombreMarca" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="10" y="90" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones atributos MARCA -->
+        <mxCell id="edge_m1" edge="1" parent="1" source="marca_codigo" target="marca"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_m2" edge="1" parent="1" source="marca_nombre" target="marca"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- RELACIÓN DISEÑA -->
+        <mxCell id="diseña" value="DISEÑA" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="200" y="60" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones MARCA - DISEÑA - ZAPATILLA -->
+        <mxCell id="edge_md" edge="1" parent="1" source="marca" target="diseña"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_dz" edge="1" parent="1" source="diseña" target="zapatilla"><mxGeometry relative="1" as="geometry"/></mxCell>
 
         <!-- ENTIDAD FÁBRICA -->
-        <mxCell id="fabrica" value="FÁBRICA&#xa;PK: CódigoFábrica&#xa;Calle&#xa;Número&#xa;Ciudad" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="700" y="40" width="190" height="110" as="geometry"/>
+        <mxCell id="fabrica" value="FÁBRICA" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="160" height="60" as="geometry"/>
         </mxCell>
 
+        <!-- ATRIBUTOS FÁBRICA -->
+        <mxCell id="fab_codigo" value="CódigoFábrica (PK)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="10" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="fab_calle" value="Calle" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="fab_numero" value="Número" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="130" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="fab_ciudad" value="Ciudad" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="660" y="90" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones atributos FÁBRICA -->
+        <mxCell id="edge_f1" edge="1" parent="1" source="fab_codigo" target="fabrica"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_f2" edge="1" parent="1" source="fab_calle" target="fabrica"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_f3" edge="1" parent="1" source="fab_numero" target="fabrica"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_f4" edge="1" parent="1" source="fab_ciudad" target="fabrica"><mxGeometry relative="1" as="geometry"/></mxCell>
+
         <!-- RELACIÓN SE FABRICA EN -->
-        <mxCell id="fabrica_rel" value="SE FABRICA EN" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="600" y="80" width="120" height="60" as="geometry"/>
+        <mxCell id="fab_rel" value="SE FABRICA EN" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="500" y="60" width="120" height="60" as="geometry"/>
         </mxCell>
 
         <!-- Conexiones ZAPATILLA - SE FABRICA EN - FÁBRICA -->
-        <mxCell id="edge5" edge="1" parent="1" source="zapatilla" target="fabrica_rel">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="edge6" edge="1" parent="1" source="fabrica_rel" target="fabrica">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <mxCell id="edge_zf" edge="1" parent="1" source="zapatilla" target="fab_rel"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_fr" edge="1" parent="1" source="fab_rel" target="fabrica"><mxGeometry relative="1" as="geometry"/></mxCell>
 
         <!-- ENTIDAD TIENDA -->
-        <mxCell id="tienda" value="TIENDA&#xa;PK: CódigoTienda&#xa;NombreTienda&#xa;Teléfono (opcional)" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="400" y="360" width="210" height="100" as="geometry"/>
+        <mxCell id="tienda" value="TIENDA" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="160" height="60" as="geometry"/>
         </mxCell>
+
+        <!-- ATRIBUTOS TIENDA -->
+        <mxCell id="tienda_codigo" value="CódigoTienda (PK)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="240" y="260" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="tienda_nombre" value="NombreTienda" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="240" y="340" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="tienda_tel" value="Teléfono (opcional)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="360" y="340" width="140" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones atributos TIENDA -->
+        <mxCell id="edge_t1" edge="1" parent="1" source="tienda_codigo" target="tienda"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_t2" edge="1" parent="1" source="tienda_nombre" target="tienda"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_t3" edge="1" parent="1" source="tienda_tel" target="tienda"><mxGeometry relative="1" as="geometry"/></mxCell>
 
         <!-- RELACIÓN SE VENDE EN -->
         <mxCell id="vende" value="SE VENDE EN" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="440" y="300" width="120" height="60" as="geometry"/>
+          <mxGeometry x="300" y="220" width="120" height="60" as="geometry"/>
         </mxCell>
 
         <!-- Conexiones ZAPATILLA - SE VENDE EN - TIENDA -->
-        <mxCell id="edge7" edge="1" parent="1" source="zapatilla" target="vende">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="edge8" edge="1" parent="1" source="vende" target="tienda">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <mxCell id="edge_v1" edge="1" parent="1" source="zapatilla" target="vende"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_v2" edge="1" parent="1" source="vende" target="tienda"><mxGeometry relative="1" as="geometry"/></mxCell>
 
         <!-- ENTIDAD CLIENTE -->
-        <mxCell id="cliente" value="CLIENTE&#xa;PK: DNI&#xa;Nombre&#xa;Apellidos" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="700" y="360" width="190" height="100" as="geometry"/>
+        <mxCell id="cliente" value="CLIENTE" style="rounded=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="300" width="160" height="60" as="geometry"/>
         </mxCell>
+
+        <!-- ATRIBUTOS CLIENTE -->
+        <mxCell id="cli_dni" value="DNI (PK)" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="260" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli_nombre" value="Nombre" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="340" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="cli_apellidos" value="Apellidos" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="680" y="340" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Conexiones atributos CLIENTE -->
+        <mxCell id="edge_c1" edge="1" parent="1" source="cli_dni" target="cliente"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_c2" edge="1" parent="1" source="cli_nombre" target="cliente"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_c3" edge="1" parent="1" source="cli_apellidos" target="cliente"><mxGeometry relative="1" as="geometry"/></mxCell>
 
         <!-- RELACIÓN COMPRA EN -->
         <mxCell id="compra" value="COMPRA EN" style="rhombus;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="620" y="300" width="120" height="60" as="geometry"/>
+          <mxGeometry x="500" y="300" width="120" height="60" as="geometry"/>
         </mxCell>
 
         <!-- Conexiones CLIENTE - COMPRA EN - TIENDA -->
-        <mxCell id="edge9" edge="1" parent="1" source="cliente" target="compra">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-        <mxCell id="edge10" edge="1" parent="1" source="compra" target="tienda">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
+        <mxCell id="edge_cp1" edge="1" parent="1" source="cliente" target="compra"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge_cp2" edge="1" parent="1" source="compra" target="tienda"><mxGeometry relative="1" as="geometry"/></mxCell>
 
       </root>
     </mxGraphModel>
   </diagram>
 </mxfile>
-
